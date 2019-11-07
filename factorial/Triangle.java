@@ -1,31 +1,5 @@
 public class Triangle {
 
-    public static List<Integer> selectionSort(List<Integer> list) {
-
-        for (int i=1; i < list.size(); i++) {
-            int min = list.get(0);
-            int counter = i-1;
-
-            // n-1個の中から最小値を発見し、カウンターに反映する
-            // counter番目がn-1個の中で最小となる
-            while (counter < list.size()) {
-                if (list.get(counter) < min) {
-                    min = list.get(counter);
-                }
-                counter++;
-            }
-
-            // n-1個の中の最小値とi番目の値を入れ替え
-            int tmp = list.get(i-1);
-            list.set(i, min);
-            list.set(counter-1, tmp);
-
-            System.out.println(min);
-        }
-
-        return list;
-    }
-
     public static long factorial(long number) {
         if(number != 1) {
             number *= factorial(number - 1);
