@@ -7,7 +7,7 @@ function printStartLog() {
 }
 
 # 生成先ディレクトリの存在チェック、なければ生成
-if [ ! -e dest ]; then
+if [ ! -d dest ]; then
     echo "/_/_/_/_/_/_/_/_/_/_ make directory 'dest'... /_/_/_/_/_/_/_/_/_/_"
     mkdir dest
 fi
@@ -16,7 +16,7 @@ fi
 printStartLog compile
 kotlinc -d dest *.kt
 
-if [ $? == 0 ]; then
+if [ $? = 0 ]; then
     ls -alR dest
 fi
 
