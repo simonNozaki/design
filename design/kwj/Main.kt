@@ -58,18 +58,48 @@ fun pop(stack: Stack): Unit {
 
     if (stack.tail != null) {
         // kotlinでは、明示的にメモリ解放しないでよいので参照しなくなったノードは気にかけない
-        stack.current = stack.head
+        stack.current = stack.tail
         while(stack.current?.next != null) {
             stack.current = stack.current?.next
         }
         // 最後尾をn-1番目のノードに差し替える
-        stack.tail = stack.current
+        stack.head = stack.head?.next
     }
 
 }
 
+fun printTopNode(stack: Stack): Unit {
+    if (stack.head == null) { 
+        println("スタックは空です.")
+    } else {
+        println(stack.head?.data)
+    }
+}
+
+fun printTailNode(stack: Stack): Unit {
+    if (stack.tail == null) { 
+        println("スタックは空です.")
+    } else {
+        println(stack.tail?.data)
+    }
+}
+
 fun main(args: Array<String>) {
 
-    println(Main.factorial(5))
+    var stack: Stack = Stack()
+    push(stack, 1)
+    push(stack, 2)
+    push(stack, 3)
+    push(stack, 4)
+    push(stack, 5)
+
+    printTopNode(stack)
+    printTailNode(stack)
+
+    pop(stack)
+    pop(stack)
+
+    printTopNode(stack)
+    printTailNode(stack)
     
 }
