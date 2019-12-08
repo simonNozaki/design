@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+    <classpathentry kind="lib" path="lib/jung-api-2.0.1.jar" />
+    <classpathentry kind="lib" path="lib/jung-io-2.0.1.jar" />
+    <classpathentry kind="lib" path="lib/jung-jai-2.0.1.jar" />
+    <classpathentry kind="lib" path="lib/jung-algorithms-2.0.1.jar" />
+</classpath>
